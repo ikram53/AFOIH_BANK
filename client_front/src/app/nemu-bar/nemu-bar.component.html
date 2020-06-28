@@ -1,0 +1,29 @@
+
+
+
+<head>
+  
+ 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ 
+</head>
+
+
+  <div class="app">
+    <div class="top">
+      <div class="menu">
+        <button class="menu-button"  routerLink="/acceuil"><i class="fas fa-university fa-3x" ></i></button>
+        <button class="menu-button" routerLink="/comptes" title="Mes comptes"><i class="fas fa-money-check-alt fa-3x"></i></button>
+        <button class="menu-button" [disabled]="CCDesactive" routerLink="/operations/recharge" title="Recharge"><i class="fas fa-coins fa-3x"></i></button>
+        <button class="menu-button" [disabled]="CCDesactive" routerLink="/operations/virement/externe" title="Virement"><i class="fas fa-comments-dollar  fa-3x"></i></button>
+        <button class="menu-button"  title="changer password" (click)="changePass(client.id)"><i class="fas fa-key fa-3x"></i></button>
+        <button class="menu-button"  title="Deconnection" (click)="logout()"><i class="fas fa-sign-out-alt fa-3x"></i></button>
+    </div>
+    
+
+
+  
+  </div>
+ 
+
+

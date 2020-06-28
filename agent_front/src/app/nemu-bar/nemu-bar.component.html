@@ -1,0 +1,118 @@
+
+  <nav class="navbar navbar-expand-lg  fixed-top" style="background: black;">
+    <a class="navbar-brand" (click)="onAcceuil()" style="color: #BADFE7; font-weight: bolder; font-style: italic;cursor: pointer;">AFOIH Bank</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      
+    >
+     
+      <span class="navbar-toggler-icon">   
+        <i class="fa fa-bars" style="color:#BADFE7; font-size:28px;"></i>
+    </span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+        
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-collapse"
+            href="#"
+            id="hasSubItems"
+            data-toggle="collapse"
+            data-target="#collapseSubItems1"
+            aria-controls="collapseSubItems1"
+            aria-expanded="false"
+          ><i class="fa fa-address-card"></i><span>Client</span> </a>
+          <ul class="nav-second-level collapse" id="collapseSubItems1" data-parent="#navAccordion">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/listClient">
+                <span class="nav-link-text">  Liste Client</span>
+              </a>
+      
+           
+          </ul>
+        </li>
+        
+
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-collapse"
+            href="#"
+            id="hasSubItems"
+            data-toggle="collapse"
+            data-target="#collapseSubItems2"
+            aria-controls="collapseSubItems2"
+            aria-expanded="false"
+          ><i class="fa fa-money"></i> <span>Compte</span></a>
+          <ul class="nav-second-level collapse" id="collapseSubItems2" data-parent="#navAccordion">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/comptes/ajoutCompte">
+                <span class="nav-link-text">  Ajout Compte</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/comptes/listCompte">
+                <span class="nav-link-text"> Liste Compte</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/comptes/compteDesactive">
+                <span class="nav-link-text">  Compte désactivé</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+       
+        <li class="nav-item">
+          <a
+            class=" nav-link nav-link-collapse"
+            href="#"
+            id="hasSubItems"
+            data-toggle="collapse"
+            data-target="#collapseSubItems4"
+            aria-controls="collapseSubItems4"
+            aria-expanded="false"
+          ><i class="fa fa-address-card"></i> <span>Operation</span></a>
+          <ul class="nav-second-level collapse" id="collapseSubItems4" data-parent="#navAccordion">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/operations/liste">
+                <span class="nav-link-text">Liste Operation</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/operations/retrait">
+                <span class="nav-link-text"> Retrait</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/operations/versement">
+                <span class="nav-link-text"> Versement</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/operations/virement">
+                <span class="nav-link-text"> Virement</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+      <form class="form-inline ml-auto mt-3 mt-md-0">
+        
+        <button class="btn btn-outline-secondary my-2 my-sm-0" (click)="logout()" type="submit">Logout</button>
+      </form>
+    </div>
+  </nav>
+  
+ 
+   
+    
+    

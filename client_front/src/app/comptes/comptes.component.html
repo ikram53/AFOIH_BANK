@@ -1,0 +1,41 @@
+<app-nemu-bar></app-nemu-bar>
+
+<!--<div class="container">
+
+  <div class="container">
+    <div class="row">	
+     
+    <div class="col-md-4 text-center" style="opacity: 1;" *ngFor="let list of ListCompte">
+        <a (click)="toOperation(list.rib)">
+    <div class="content-box">
+    <p class="content-box-sub">Type Compte : {{list?.typeCompte}}</p>
+    <p class="content-box-sub">Rib : {{list.rib}}</p>
+    <p class="content-box-sub"> Solde : {{list.solde | number: '.2'}} MAD</p>
+    </div>
+</a>
+    </div>
+
+</div>
+
+    
+    
+    </div>-->
+    <div class="cardd">
+        <div class="cardd__box" *ngFor="let list of ListCompte">
+          <a (click)="toOperation(list.rib)">
+          <div class="cardd__img"><i class="far fa-credit-card fa-3x"></i></div>
+          <div class="img__text">
+            <span class="img__header"><strong>{{list?.typeCompte}}</strong></span>
+            <p class="card__body">
+              Rib :  {{list.rib}}<br>
+
+              Solde : {{list.solde | number: '.2'}} MAD
+               <div *ngIf="list.etat==1; else elseTag">
+                 Etat :  Activé</div>
+               <ng-template #elseTag><div> Etat :  Désactivé</div></ng-template> 
+              
+          </div>
+          </a>
+        </div>
+    
+   

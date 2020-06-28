@@ -1,0 +1,25 @@
+
+<app-nemu-bar></app-nemu-bar>
+<br>
+<div class="container">
+    
+    <div class="card" style="margin-left: 30%;">
+      <div class="card__container">
+          <h1 class="card__header">
+          Recharge
+        </h1>
+        <form #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <input  name="codeRecharge"
+             class="input" type="text" [(ngModel)]="codeRecharge.code" #rech='ngModel' minlength="3" maxlength="8" placeholder="Code de recharge" required>
+            <br> <small class="text-danger " [class.d-none]="rech.valid || rech.untouched">Ce champs est obligatoire</small>
+            <br>
+      
+            <button type="submit"  [disabled]="!form.valid"  class="submit">Recharge</button>
+        </form>
+      </div>
+   
+    
+  </div>
+</div>
+
+

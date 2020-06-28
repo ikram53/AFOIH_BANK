@@ -1,0 +1,18 @@
+<div class="container">
+<div id="body">
+    <app-nemu-bar></app-nemu-bar>
+<div class="route">
+    <br><br>
+    <div  class="content">
+      <h1>Info Client</h1>
+      <br>
+      <div style="margin-left:33%;">
+        <strong >Nom :</strong> {{client?.nom}}<br><br>
+        <strong>Prenom :</strong> {{client?.prenom}}<br><br>
+         <strong>Date de dateNaissance :</strong> {{client?.dateNaissance |  date:'dd/mm/yyy'}}<br><br>
+         <strong>Numero de telephone :</strong> {{client?.numTel}}<br><br>
+         <strong>username :</strong> {{client?.username}}
+     </div><br><br>
+     <button style="margin-left:60%;"  class="submit" (click)="onTerminer()">Precedent</button>
+    </div>
+  </div>

@@ -1,0 +1,60 @@
+
+.card::before{
+  position: absolute;
+  top:2rem;
+  right:-0.5rem;
+  content: '';
+  background: tomato;
+  height: 28px;
+  width: 28px;
+  transform : rotate(45deg);
+}
+
+.card::after{
+  position: absolute;
+  content: 'Contact';
+  color: white;
+  top: 11px;
+  right: -14px;
+  padding: 0.5rem;
+  width: 7rem;
+  background: black;
+  font-style: italic;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+}
+
+/********************/
+
+
+
+/**********/
+.content-box {
+ 
+  box-shadow: 1px 4px 8px rgba(0,0,0,.19);
+  transition: all .3s ease-in-out;
+  padding: 4px;
+  padding-bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  height: 200px;
+}
+
+.content-box .finbyz-icon {
+  height: 100px;
+  width: 100px;
+  display: inline;
+}
+
+
+h4{
+ 
+  text-align: center;
+  
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  font-style: italic;
+  
+ 
+}

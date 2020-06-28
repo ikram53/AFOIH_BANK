@@ -1,0 +1,13 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }

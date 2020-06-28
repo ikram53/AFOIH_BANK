@@ -1,0 +1,26 @@
+
+<div id="body">
+    <app-nemu-bar></app-nemu-bar>
+
+    <div class="route">
+    
+        <h1 >Virement</h1>
+        <form #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <input [(ngModel)]="_compteSource.rib" #sour='ngModel' name="compteSource" class="input"
+         type="text" placeholder="Compte Source (RIB / CIN)" required>
+         <small class="text-danger" [class.d-none]="sour.valid || sour.untouched">Ce champs est obligatoire</small>
+         <input [(ngModel)]="_compteDestination.rib"   #dest='ngModel' name="compteDestination" class="input"
+         type="text" placeholder="Compte Destination (RIB / CIN)" required> 
+         <small class="text-danger" [class.d-none]="dest.valid || dest.untouched">Ce champs est obligatoire</small>
+         <input [(ngModel)]="newOperation.montant" name="montant" class="input" #mont='ngModel' pattern="[1-9][0-9]{2,4}"
+        type="number" min="0" placeholder="Montant" required>
+        <div *ngIf="mont.errors && mont.touched">
+            <small class="text-danger" *ngIf="mont.errors.required">* Ce champs est obligatoire</small>
+            <small class="text-danger" *ngIf="mont.errors.pattern"> * Le montant doit etre entre  100 a 10000 DH</small>
+         </div>
+        <br>
+        <button type="submit"  [disabled]="!form.valid" class="submit" >Valider</button>
+         </form>
+        
+ </div>
+ 
