@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Add</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{css/bootstrap-theme.css}" />
+    <!--external css-->
+    <!-- font icon -->
+    <link rel="stylesheet" href="../static/css/elegant-icons-style.css" th:href="@{css/elegant-icons-style.css}" />
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{css/font-awesome.min.css}" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" />
+    <link rel="stylesheet" href="../static/css/style-responsive.css" th:href="@{css/style-responsive.css}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<!-- container section start -->
+<section id="container" class="">
+    <!--header start-->
+
+
+    <div th:replace="fragments/base :: header">
+    </div>
+    <!--header end-->
+    <!--sidebar start-->
+
+    <div th:replace="fragments/nav :: header">
+    </div>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+                        <li><i class="fa fa-bars"></i>Agences</li>
+                        <li><i class="fa fa-square-o"></i>NewAgence</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- page start-->
+            <section class="panel">
+                <header class="panel-heading">
+                   Ajouter Agence
+                </header>
+                <div class="panel-body">
+                    <div class="form">
+                        <form th:action="@{saveAgence}" th:object="${agence}" class="form-validate form-horizontal" method="post">
+                            <div class="form-group ">
+                                <label for="nomA" class="control-label col-lg-2">Nom d'agence<span class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <div th:classappend="${#fields.hasErrors('nomAgence')} ? 'input-icon right' : ''">
+                                        <i th:if="${#fields.hasErrors('nomAgence')}" class="fa fa-exclamation tooltips exclam" data-original-title="nom invalid" data-container="body"></i>
+                                        <input class=" form-control" id="nomA"  type="text" name="nomAgence" th:field="*{nomAgence}" th:value="${agence.getNomAgence()}" required />
+                                    <span id="missNomA"></span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="address" class="control-label col-lg-2">Addresse <span class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <div th:classappend="${#fields.hasErrors('adresse')} ? 'input-icon right' : ''">
+                                        <i th:if="${#fields.hasErrors('adresse')}" class="fa fa-exclamation tooltips exclam" data-original-title="adresse invalid" data-container="body"></i>
+                                        <input class=" form-control" id="address"  type="text"  name="adresse" th:field="*{adresse}" th:value="${agence.getAdresse()}" required/>
+                                    <span id="missAddress"></span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label col-lg-2">Ville<span class="required">*</span></label>
+                                                <div class="col-sm-10">
+                                                    <div th:classappend="${#fields.hasErrors('ville')} ? 'input-icon right' : ''">
+                                                        <i th:if="${#fields.hasErrors('ville')}" class="fa fa-exclamation tooltips exclam" data-original-title="ville invalid" data-container="body"></i>
+                                                        <input class=" form-control" id="ville" type="text" name="ville" th:field="*{ville}" th:value="${agence.getVille()}" required/>
+                                                    <span id="missVille"></span><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                            <div class="form-group ">
+                                <label for="tel" class="control-label col-lg-2">Telephone<span class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <div th:classappend="${#fields.hasErrors('tel')} ? 'input-icon right' : ''">
+                                    <i th:if="${#fields.hasErrors('tel')}" class="fa fa-exclamation tooltips exclam" data-original-title="téléphone invalid" data-container="body"></i>
+                                    <input class="form-control " id="tel" type="text" name="tel" th:field="*{tel}" th:value="${agence.getTel()}" required/>
+                                    <span id="missTel" class="confirmeNum"></span><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button id="envoy" class="btn-enregistrer" type="submit">Enregistrer</button>
+                                    <button class="btn-annuler" href="/liste" type="button">Annuler</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- page end-->
+        </section>
+    </section>
+    <!--main content end-->
+    <div class="text-right">
+        <div class="credits">
+
+
+        </div>
+    </div>
+</section>
+
+<script   th:src="@{js/jquery.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<!-- nice scroll -->
+<script  th:src="@{js/jquery.scrollTo.min.js}"></script>
+<script th:src="@{js/jquery.nicescroll.js}"></script>
+
+<script  th:src="@{js/scripts.js}"></script>
+<script  th:src="@{js/script.js}"></script>
+
+
+
+</body>
+
+</html>
